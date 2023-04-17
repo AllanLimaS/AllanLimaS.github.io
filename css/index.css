@@ -1,0 +1,100 @@
+:root{
+    --textoClaro: #E4E0DD;
+    --bgEscuro: #27242C;
+}
+
+
+a{
+    font-family: 'Chivo Mono', monospace;
+    letter-spacing: 0.1em;
+}
+
+
+
+/* navbar*/
+.navbar{
+    background-color: rgba(0,0,0,0.5);
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.51);
+}
+
+.brand{
+    color: var(--textoClaro);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    padding-left: 1rem;
+    
+}
+
+.navBarItens a{
+    padding: 2rem;
+    text-decoration: none;
+    color:var(--textoClaro);
+}
+/* navbar end */
+
+/* home hero*/
+.home{
+    background-image: url(/images/homebg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.home .content{
+    padding-left: 10vh;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.51);
+    color: var(--textoClaro);
+}
+
+.home h1{
+    font-weight: bold;
+    font-size: 96px;
+    max-width: 60vh;
+}
+.home h2{
+    font-size: 36px;
+}
+/* home hero end*/
+
+/* sobre mim */
+.sobreMim{
+    
+    background-color: var(--bgEscuro);
+    height: 100vh;
+    color: var(--textoClaro);
+    position: relative;
+}
+
+.sobreMim h1{
+    font-size: 80px;
+    border-left: 2px solid var(--textoClaro);
+    box-sizing: content-box;
+    float: right;
+    position: relative;
+    padding: 0 20vh 0.5rem 0.75rem;
+    margin: 5rem 0 3rem 0 ;
+}
+
+.sobreMim .conteudo{
+    clear: both;
+    height: 100vh;
+}
+
+.sobreMim .foto{
+    
+}
+
+.sobreMim .texto{
+    border-left: 2px solid var(--textoClaro);
+    padding-left: 2rem;
+}
+
+.sobreMim .transicao{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+}
+/* sobre mim end*/
