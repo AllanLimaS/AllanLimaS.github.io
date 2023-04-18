@@ -23,17 +23,17 @@
         <div class="container-fluid">
             <a class="brand" href="#">Allan.</a>
             <div class="navBarItens">
-                <a class="" href="#">Sobre</a>
-                <a class="" href="#">Skills</a>
-                <a class="" href="#">Portfolio</a>
-                <a class="" href="#">Contato</a>
+                <a class="" href="#SobreMim">Sobre</a>
+                <a class="" href="#Skills">Skills</a>
+                <a class="" href="#Portfolio">Portfólio</a>
+                <a class="" href="#Contato">Contato</a>
             </div>
         </div>
     </nav>
     <!--navbar end-->
 
     <!-- home -->
-    <section class="home container-fluid d-flex justify-content-center align-items-center">
+    <section id="Home" class="home container-fluid d-flex justify-content-center align-items-center">
         <div class="content container-fluid">
             <h1>Allan de lima da silva</h1>
             <h2>Desenvolvedor de software</h2>
@@ -43,17 +43,22 @@
     <!-- home end-->
 
     <!-- Sobre mim: -->
-    <section class="sobreMim">
+    <section id="SobreMim" class="sobreMim">
         <div class="container">
             <h1>Sobre mim:</h1>
         </div>
         <div class="container-fluid conteudo">
             <div class="row justify-content-between align-items-center ">
-                <div class="foto col d-flex">
+                <div class="foto col d-flex justify-content-center">
                     <img class="img-fluid" src="images/sobremim_foto.png" alt="">
                 </div>
                 <div class="texto col">
-                    <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essent.
+                    <h3>
+                        Estudo na área de TI desde 2018 e sempre fui apaixonado por tecnologia. Procuro uma oportunidade para iniciar minha carreira na área de TI, que sempre almejei desde o início dos meus estudos.
+                        <br><br>
+                        Tenho experiência profissional no Mercado Shalon como Repositor, Comprador e Auxiliar Administrativo entre 2016 e 2023. Também fui Voluntário no Museu oceanográfico Univali em 2014 e 2015, onde atuei como Mediador no Atendimento ao Público.
+                        <br><br>
+                        Gosto de me manter atualizado com as tendências do mercado de tecnologia e estou sempre em busca de novos desafios e oportunidades de aprendizado.
                     </h3>
                 </div>
             </div>
@@ -63,7 +68,7 @@
     <!-- Sobre mim: end -->
 
     <!-- Skills  -->
-    <section class="skills">
+    <section id="Skills" class="skills">
         <div class="container conteudo d-flex flex-column align-items-center">
           <h1>Skills:</h1>
           <div class="row justify-content-center align-items-center d-flex justify-content-">
@@ -88,56 +93,61 @@
     </section>
     <!-- Skills end -->
 
-    <!-- Portifolio -->
-    <section class="portfolio">
+    <!-- Portfolio -->
+    <section id="Portfolio" class="portfolio">
         <div class="container d-flex flex-column align-items-center">
             <h1>Portifólio:</h1>
         </div>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center align-content-center d-flex">
                 <div class="col">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="card">
+                        <img src="images/port_1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Chat em rede (Python)</h5>
+                            <p class="card-text"> Trabalho feito para matéria de Redes, onde tinha como objetivo fazer um chat (bate papo) utilizando conceitos de socket e camada de transporte vistos em aula.</p>
+                            <a href="https://github.com/AllanLimaS/RedesM3-chat-em-rede-Python" target="_blank" class="btn btn-primary">Repositório</a>
+                        </div>
                     </div>
-                </div>
-                </div>
-                <div class="col">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-                </div>
-                <div class="col">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                </div>
-                </div>
-                <div class="col">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <img src="images/port_2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">ArvoreHuffman (C++)</h5>
+                            <p class="card-text">Trabalho feito para matéria de Estrutura de dados, onde tinha como objetivo realizar a codificação de uma frase em ASCII utilizando a estrutura de arvore Huffman.</p>
+                            <a href="https://github.com/AllanLimaS/ArvoreHuffman" target="_blank" class="btn btn-primary">Repositório</a>
+                        </div>
                     </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="images/port_3.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Uni-Ride (concepção e prototipação)</h5>
+                            <p class="card-text">Inicio de um projeto da matéria de Programação WEB, onde tem como base desenvolver o plano de projeto para um sistema WEB assim como uma prototipação de média fidelidade feita no Figma. </p>
+                            <a href="https://github.com/AllanLimaS/Uni-Ride_concepcao-e-prototipacao" target="_blank" class="btn btn-primary">Repositório</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="images/port_4.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Portifólio (Bootstrap)</h5>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique saepe officia sed quo! Minus, dolore?</p>
+                            <a href="https://github.com/AllanLimaS/Portfolio_BootStrap" target="_blank" class="btn btn-primary">Repositório</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="images/port_5.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Perfil Github</h5>
+                            <p class="card-text">Acesse meu perfil Github para poder verificar todos os meus repositórios completos.</p>
+                            <a href="https://github.com/AllanLimaS" target="_blank" class="btn btn-primary">Repositório</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,17 +157,24 @@
     <!-- Portifolio end -->
 
     <!-- Contato -->
-    <section class="contato">
+    <section id="Contato" class="contato">
         <div class="container d-flex flex-column align-items-center">
             <h1>Contato:</h1>
         </div>
 
-        <div class="container">
-            <div class="row justify-content-center align-items-center g-2">
-                <div class="col">
-                    <img src="images/contato_foto.png" alt="">
+        <div class="container-fluid conteudo">
+            <div class="row justify-content-between align-items-center ">
+                <div class="foto col d-flex justify-content-center">
+                    <img class="img-fluid" src="images/contato_foto.png" alt="">
                 </div>
-                <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, rem!</div>
+                <div class="texto col">
+                    <ul>
+                        <li><a href=""><i class="icone bi bi-telephone"></i>(47)9 9786-3582</a></li>
+                        <li><a href=""><i class="icone bi bi-envelope-at"></i>allan_11_lima@<wbr>hotmail.com</a></li>
+                        <li><a href=""><i class="icone bi bi-github"></i>github.com<wbr>/AllanLimaS</a></li>
+                        <li><a href=""><i class="icone bi bi-linkedin"></i>linkedin.com/in<wbr>/allan-de-lima-<wbr>da-silva/</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     
@@ -177,6 +194,8 @@
     </section>
     <!-- Contato end -->
 
+    <!-- Script  -->
+    <script src="/js/index.js"></script>
     <!-- Script do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

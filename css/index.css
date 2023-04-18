@@ -1,8 +1,18 @@
+/* Importação dos icones do bootstrap */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
+
 :root{
     --textoClaro: #E4E0DD;
     --bgEscuro: #27242C;
     --bgClaro: #C9C1BB;
     --textoEscuro: #27242C;
+
+    /* breakpoints do bootstrap */
+    --sm: 576px;
+    --md: 768px;
+    --lg: 992px;
+    --xl: 1200px;
+    --xxl: 1400px;
 }
 
 html{
@@ -25,6 +35,7 @@ a{
 /* navbar*/
 .navbar{
     background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(0.5rem);
     text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.51);
 }
 
@@ -61,7 +72,7 @@ a{
 .home h1{
     font-weight: bold;
     font-size: 96px;
-    max-width: 60vh;
+    max-width: 80vh;
 }
 .home h2{
     font-size: 36px;
@@ -85,28 +96,38 @@ a{
 }
 
 .sobreMim h1{
-    font-size: 80px;
+    font-size: clamp(60px,5vw,80px);
     border-left: 2px solid var(--textoClaro);
     box-sizing: content-box;
     float: right;
     position: relative;
-    padding: 0 20vh 0.5rem 0.75rem;
-    margin: 5rem 0 3rem 0 ;
+    margin-top: 8vw;
+    margin-bottom: -6vh;
+    padding-right: 8vw;
+    padding-bottom: 0.5rem;
+
+
 }
 
 .sobreMim .conteudo{
     clear: both;
 }
 
-.sobreMim .foto{
+.sobreMim .foto .img-fluid{
     max-width: none;
     justify-content: end;
-    margin-right: -100px;
+    margin-right: -5rem;
 }
 
 .sobreMim .texto{
+    padding-right: 1vw;
+}
+.sobreMim .texto h3{
+        font-size: clamp(20px,1.5vw,24px);
+    margin-left: -6vw;
     border-left: 2px solid var(--textoClaro);
-    padding-left: 2rem;
+    padding-left: 1rem;
+    max-width: inherit;
 }
 
 .sobreMim .transicao{
@@ -114,6 +135,7 @@ a{
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 15vh;
 }
 /* sobre mim end*/
 
@@ -172,15 +194,30 @@ a{
 /* Skills end*/
 
 /* portifolio*/
+
+
+
 .portfolio {
     position: relative;
     background-color: var(--bgEscuro);
     color: var(--textoClaro);
-    height:120vh;
+    height:360vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+@media screen and (min-width:768px) {
+    .portfolio {
+        height:210vh !important;
+    }
+}
+@media screen and (min-width:992px) {
+    .portfolio {
+        height:160vh !important;
+    }
+}
+
 
 .portfolio h1{
     font-size: 80px;
@@ -189,10 +226,38 @@ a{
 }
 
 .portfolio .card{
-    max-width: 450px;
-    min-width: 250px;
     margin-bottom: 60px;
     padding: 0;
+}
+
+.portfolio .card .card-body{
+    min-height: 225px;
+    max-height: 5000px;
+    align-items: center;
+    justify-content: unset; 
+    margin-bottom: 2rem;
+}
+
+.portfolio .card h5{
+    align-self: flex-start;
+}
+
+.portfolio .card .btn{
+    background-color: var(--bgEscuro);
+    align-self: flex-start;
+    position: absolute;
+    
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.portfolio .card .btn:hover {
+    filter: opacity(0.75);
+    transition: 0.5s;
+}
+
+.portfolio .card .btn:active {
+    filter: opacity(0.20);
 }
 
 .portfolio .transicao{
@@ -231,9 +296,65 @@ a{
     align-items: center;
 }
 
+@media screen and (max-width:768px) {
+    .contato .row {
+        flex-direction: column !important;
+    }
+}
+
+
 .contato .col {
     text-align: center;
 }
+
+.contato .conteudo .img-fluid{
+    max-width: 30vw;
+}
+
+.contato .conteudo ul{
+    list-style-type: none;
+}
+.contato .conteudo li{
+    font-size: clamp(0px,2.5vw,36px);
+    text-align: left;
+    margin-left: -6vw;
+    border-left: 2px solid var(--textoEscuro);
+    padding-left: 2rem;
+
+}
+
+.contato .conteudo i{
+    margin-right: 1rem;
+}
+
+.contato .conteudo a{
+    text-decoration: none;
+    color: var(--textoEscuro);
+    padding-left: 0.5rem;
+    word-break: break-word;
+    max-width: 80%;
+}
+
+@media screen and (max-width:768px) {
+    .contato .conteudo .img-fluid{
+        max-width: 50vw;
+        padding-bottom: 30vw;
+    }
+    .contato .conteudo ul{
+        margin-top: -20vw;
+        padding-left: 15vw;
+        padding-right: 10vw;
+    }
+    .contato h1{
+        margin-top: -110px;
+    }
+    .contato .conteudo li{
+        font-size: clamp(22px,2.5vw,36px);
+        padding-left: 1rem;
+    }
+}
+
+
 /* Contato end*/
 
 /* footer */
