@@ -1,6 +1,17 @@
 :root{
     --textoClaro: #E4E0DD;
     --bgEscuro: #27242C;
+    --bgClaro: #C9C1BB;
+    --textoEscuro: #27242C;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    letter-spacing: 0.01em;
+    font-family: 'Chivo Mono', monospace;
 }
 
 
@@ -55,6 +66,13 @@ a{
 .home h2{
     font-size: 36px;
 }
+.home .transicao{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+}
 /* home hero end*/
 
 /* sobre mim */
@@ -78,11 +96,12 @@ a{
 
 .sobreMim .conteudo{
     clear: both;
-    height: 100vh;
 }
 
 .sobreMim .foto{
-    
+    max-width: none;
+    justify-content: end;
+    margin-right: -100px;
 }
 
 .sobreMim .texto{
@@ -95,6 +114,145 @@ a{
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 30vh;
 }
 /* sobre mim end*/
+
+
+/* Skills */
+.skills {
+    position: relative;
+    background-color: var(--bgClaro);
+    color: var(--textoEscuro);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills span{
+    font-weight: bold;
+}
+
+.skills h1 {
+    font-size: 80px;
+    margin-bottom: 3rem;
+}
+
+.skills .conteudo {
+    font-size: 36px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.skills .bloco_1 {
+    text-align: end;
+    padding-right: 2rem;
+}
+
+.skills .bloco_2 {
+    text-align: left;
+    border-left: 2px solid var(--textoEscuro);
+    padding-left: 2rem;
+}
+
+.skills .transicao{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 125px;
+}
+@media screen and (max-width:900px) {
+    .skills .transicao{
+    height: 150px;
+    }
+
+}
+/* Skills end*/
+
+/* portifolio*/
+.portfolio {
+    position: relative;
+    background-color: var(--bgEscuro);
+    color: var(--textoClaro);
+    height:120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio h1{
+    font-size: 80px;
+    padding-top: 100px;
+    padding-bottom: 150px;
+}
+
+.portfolio .card{
+    max-width: 450px;
+    min-width: 250px;
+    margin-bottom: 60px;
+    padding: 0;
+}
+
+.portfolio .transicao{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+}
+
+/* portifolio end*/
+
+/* Contato */
+.contato{
+    position: relative;
+    background-color: var(--bgClaro);
+    color: var(--textoEscuro);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contato h1{
+    font-size: 80px;
+    margin-top: -200px;
+    text-align: center;
+}
+
+.contato .container:first-child {
+    margin-bottom: 2rem;
+}
+
+.contato .row {
+    align-items: center;
+}
+
+.contato .col {
+    text-align: center;
+}
+/* Contato end*/
+
+/* footer */
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: var(--bgEscuro);
+    color: var(--textoClaro);
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+footer h2{
+    font-size: 20px;
+}
+footer h3{
+    font-size: 16px;
+}
+
+
+/* footer end*/
+
