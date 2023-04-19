@@ -30,8 +30,6 @@ a{
     letter-spacing: 0.1em;
 }
 
-
-
 /* navbar*/
 .navbar{
     background-color: rgba(0,0,0,0.5);
@@ -60,23 +58,61 @@ a{
     background-image: url(/images/homebg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 100vh;
 }
 
 .home .content{
-    padding-left: 10vh;
+    padding-left: 3rem;
     text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.51);
     color: var(--textoClaro);
+    display: inline-block;
+    margin-left: 0rem;
+
 }
 
 .home h1{
     font-weight: bold;
-    font-size: 96px;
+    font-size: clamp(36px,8vw,80px);
     max-width: 80vh;
 }
 .home h2{
-    font-size: 36px;
+    font-size: clamp(16px,3vw,32px);
+    margin-bottom: 0px;
+    padding-right: 1rem;
 }
+
+
+@media screen and (min-width: 992px) {
+    .home .content{
+        padding-left: 10vh;
+        margin-left: auto;
+    }
+ }
+
+.Typewriter{
+    border-right: 3px solid;
+    display: inline-block;
+    width: 100%;
+    max-width: max-content;
+    white-space: nowrap;
+    overflow: hidden;
+
+    animation: typing 3.5s steps(100), blink .5s step-end infinite alternate;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
 .home .transicao{
     position: absolute;
     bottom: 0;
@@ -96,17 +132,12 @@ a{
 }
 
 .sobreMim h1{
-    font-size: clamp(60px,5vw,80px);
-    border-left: 2px solid var(--textoClaro);
-    box-sizing: content-box;
+    font-size: clamp(60px,4vw,80px);
     float: right;
     position: relative;
     margin-top: 8vw;
     margin-bottom: -6vh;
-    padding-right: 8vw;
     padding-bottom: 0.5rem;
-
-
 }
 
 .sobreMim .conteudo{
@@ -123,11 +154,13 @@ a{
     padding-right: 1vw;
 }
 .sobreMim .texto h3{
-        font-size: clamp(20px,1.5vw,24px);
+    font-size: clamp(20px,1.5vw,24px);
     margin-left: -6vw;
     border-left: 2px solid var(--textoClaro);
     padding-left: 1rem;
     max-width: inherit;
+    line-height: clamp(1rem,3vw,2rem);
+
 }
 
 .sobreMim .transicao{
@@ -137,6 +170,71 @@ a{
     width: 100%;
     height: 15vh;
 }
+
+@media screen and (min-width: 768px) {
+    .sobreMim h1{
+        margin-top: 10vw;
+        margin-bottom: 0vw;
+        padding-bottom: 3.5rem;
+    
+    }
+    .sobreMim .texto h3{
+        line-height: 1.5rem;
+    }
+
+    .sobreMim .foto .img-fluid{
+        max-width: 39vw;
+        margin-right: 1rem;
+        margin-bottom: -19rem;
+
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .sobreMim h1{
+        margin-top: 9vw;
+        margin-bottom: -2vw;
+        padding-bottom: 3.5rem;
+    }
+    .sobreMim .texto h3{
+        line-height: 1.8rem;
+    }
+
+    .sobreMim .foto .img-fluid{
+        max-width: 45vw;
+        margin-right: 1rem;
+        margin-bottom: -5rem;
+
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .sobreMim h1{
+        margin-top: 9vw;
+        margin-bottom: -2vw;
+        padding-bottom: 1.5rem;
+    }
+    .sobreMim .texto h3{
+        line-height: 2rem;
+    }
+    .sobreMim .foto .img-fluid{
+        max-width: 50vw;
+        margin-right: 0rem;
+        margin-bottom: 0rem;
+
+    }
+}
+
+@media screen and (min-width:1400px) {
+    .sobreMim h1{
+        margin-top: 7vw;
+        margin-bottom: -2vh;
+        padding-bottom: 0.5rem;
+    }
+}
+
+
 /* sobre mim end*/
 
 
@@ -157,14 +255,17 @@ a{
 }
 
 .skills h1 {
-    font-size: 80px;
+    font-size: clamp(60px,4vw,80px);
     margin-bottom: 3rem;
 }
 
 .skills .conteudo {
-    font-size: 36px;
     width: 80%;
     max-width: 1200px;
+}
+
+.skills h3 {
+    font-size: clamp(22px,2.5vw,26px);
 }
 
 .skills .bloco_1 {
@@ -185,12 +286,20 @@ a{
     width: 100%;
     height: 125px;
 }
-@media screen and (max-width:900px) {
-    .skills .transicao{
-    height: 150px;
-    }
 
+@media screen and (min-width: 768px) {
+    .skills h3 {
+        font-size: clamp(22px,2.5vw,26px);
+    }
 }
+
+@media screen and (min-width: 1400px) {
+    .skills h1 {
+        font-size: 80px
+    }
+}
+
+
 /* Skills end*/
 
 /* portifolio*/
@@ -218,12 +327,12 @@ a{
     }
 }
 
-
 .portfolio h1{
-    font-size: 80px;
-    padding-top: 100px;
-    padding-bottom: 150px;
+    font-size: clamp(60px,4vw,80px);
+    padding-top: 140px;
+    padding-bottom: 70px;
 }
+
 
 .portfolio .card{
     margin-bottom: 60px;
@@ -252,7 +361,7 @@ a{
 }
 
 .portfolio .card .btn:hover {
-    filter: opacity(0.75);
+    filter: opacity(0.40);
     transition: 0.5s;
 }
 
@@ -283,8 +392,8 @@ a{
 }
 
 .contato h1{
-    font-size: 80px;
-    margin-top: -200px;
+    font-size: clamp(60px,4vw,80px);
+    margin-top: -8rem;
     text-align: center;
 }
 
@@ -305,6 +414,7 @@ a{
 
 .contato .col {
     text-align: center;
+    justify-content: end;
 }
 
 .contato .conteudo .img-fluid{
@@ -315,12 +425,13 @@ a{
     list-style-type: none;
 }
 .contato .conteudo li{
-    font-size: clamp(0px,2.5vw,36px);
+    font-size: clamp(0px,2.5vw,26px);
     text-align: left;
     margin-left: -6vw;
     border-left: 2px solid var(--textoEscuro);
     padding-left: 2rem;
-
+    max-width: 35rem;
+    line-height: 2.5rem;
 }
 
 .contato .conteudo i{
@@ -334,6 +445,37 @@ a{
     word-break: break-word;
     max-width: 80%;
 }
+
+@media screen and (min-width: 768px) {
+    .contato .conteudo .img-fluid{
+        padding-right: 5vw;
+    }
+    .contato .conteudo a {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .contato .conteudo .img-fluid{
+        padding-right: 5vw;
+    }
+    .contato .conteudo a {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .contato .conteudo .img-fluid{
+        padding-right: 5vw;
+    }
+    .contato .conteudo a {
+        font-size: 26px;
+    }
+    .contato .conteudo li{
+        line-height: 3.5rem;
+    }
+}
+
 
 @media screen and (max-width:768px) {
     .contato .conteudo .img-fluid{
@@ -368,10 +510,10 @@ footer{
     text-align: center;
 }
 footer h2{
-    font-size: 20px;
+    font-size: clamp(12px,1.5vw,16px);
 }
 footer h3{
-    font-size: 16px;
+    font-size: clamp(10px,1.2vw,14px);
 }
 
 
