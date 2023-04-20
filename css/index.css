@@ -46,11 +46,40 @@ a{
     
 }
 
+.bi-list{
+    color: white;
+    font-size: 30px;
+}
+
+.navBarItens{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
 .navBarItens a{
-    padding: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+
     text-decoration: none;
     color:var(--textoClaro);
 }
+
+@media screen and (max-width: 768px) {
+    .navBarItens{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+    .navBarItens a{
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+
+
 /* navbar end */
 
 /* home hero*/
