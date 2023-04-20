@@ -17,11 +17,16 @@
 
 html{
     scroll-behavior: smooth;
+    background-color: var(--bgEscuro);
 }
 
 *{
     letter-spacing: 0.01em;
     font-family: 'Chivo Mono', monospace;
+}
+
+body{
+    overflow-x: hidden;
 }
 
 
@@ -155,9 +160,14 @@ a{
 .sobreMim{
     
     background-color: var(--bgEscuro);
-    height: 100vh;
+    height: fit-content;
     color: var(--textoClaro);
     position: relative;
+}
+
+.sobreMim .row{
+    display: flex;
+    flex-direction: row;
 }
 
 .sobreMim h1{
@@ -188,7 +198,7 @@ a{
     border-left: 2px solid var(--textoClaro);
     padding-left: 1rem;
     max-width: inherit;
-    line-height: clamp(1rem,3vw,2rem);
+    line-height: clamp(21px,3vw,2rem);
 
 }
 
@@ -200,7 +210,38 @@ a{
     height: 15vh;
 }
 
+@media screen and (max-width: 768px) {
+    .sobreMim .row{
+        flex-direction: column-reverse;
+    }
+
+    .sobreMim h1{
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+    }
+    .sobreMim .texto h3{
+        font-size: 18px;
+        margin: 0;
+        border-left: none;
+        text-align: center;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    .sobreMim .foto .img-fluid{
+        max-width: 60%;
+        margin-right: -1rem;
+        margin-bottom: 0;
+        padding-top: 0rem;
+    }
+    .sobreMim .transicao{
+        height: 25vw;
+    }
+}
+
 @media screen and (min-width: 768px) {
+    .sobreMim{
+        height: 100vh;
+    }
     .sobreMim h1{
         margin-top: 10vw;
         margin-bottom: 0vw;
@@ -272,7 +313,7 @@ a{
     position: relative;
     background-color: var(--bgClaro);
     color: var(--textoEscuro);
-    height: 100vh;
+    height: 46rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -316,9 +357,47 @@ a{
     height: 125px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
+    .skills .conteudo{
+        width: 100%;
+    }
+    .skills .row{
+        flex-direction: column;
+        margin: 0;
+        align-content: center;
+    }
+
     .skills h3 {
-        font-size: clamp(22px,2.5vw,26px);
+        font-size: 18px;
+    }
+    .skills h1{
+        font-size: 38px;
+        margin-bottom: 1rem;
+        padding-top: 0rem;
+    }
+
+    .skills .bloco_1{
+        width: 100% !important;
+        text-align: center !important;
+        padding: 1rem;
+    }
+    .skills .bloco_2{
+        width: 100% !important;
+        text-align: center !important;
+        border: none;
+        padding: 1rem;
+    }
+    .skills .transicao{
+    height: 25vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .skills{
+        height: 100vh;
+    }
+    .skills h3 {
+        font-size: clamp(18px,2.5vw,26px);
     }
 }
 
@@ -339,7 +418,7 @@ a{
     position: relative;
     background-color: var(--bgEscuro);
     color: var(--textoClaro);
-    height:360vh;
+    height:180rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -406,6 +485,19 @@ a{
     height: 60px;
 }
 
+@media screen and (max-width: 768px) {
+    .portfolio h1{
+    font-size: 38px;
+    padding-top: 5rem;
+
+    }
+}
+@media screen and (min-width: 768px) {
+    .portfolio {
+        height:360vh;
+    }
+}
+
 /* portifolio end*/
 
 /* Contato */
@@ -413,17 +505,17 @@ a{
     position: relative;
     background-color: var(--bgClaro);
     color: var(--textoEscuro);
-    height: 100vh;
+    height: 44rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .contato h1{
-    font-size: clamp(60px,4vw,80px);
-    margin-top: -8rem;
+    font-size: 38px;
     text-align: center;
+    padding-top: 5rem;
 }
 
 .contato .container:first-child {
@@ -433,13 +525,6 @@ a{
 .contato .row {
     align-items: center;
 }
-
-@media screen and (max-width:768px) {
-    .contato .row {
-        flex-direction: column !important;
-    }
-}
-
 
 .contato .col {
     text-align: center;
@@ -454,13 +539,10 @@ a{
     list-style-type: none;
 }
 .contato .conteudo li{
-    font-size: clamp(0px,2.5vw,26px);
-    text-align: left;
-    margin-left: -6vw;
-    border-left: 2px solid var(--textoEscuro);
-    padding-left: 2rem;
-    max-width: 35rem;
+    font-size: 14px;
+    text-align: start;
     line-height: 2.5rem;
+    font-weight: bold;
 }
 
 .contato .conteudo i{
@@ -475,12 +557,45 @@ a{
     max-width: 80%;
 }
 
+@media screen and (max-width: 768px) {
+    .d-flex{
+        flex-direction: column;
+        align-items: center;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .contato .conteudo .img-fluid{
+        max-width: 50vw;
+        padding-bottom: 1rem;
+    }
+}
+
+
 @media screen and (min-width: 768px) {
+    .contato{
+        height: 100vh;
+        margin-top: -8rem;
+        justify-content: center;
+    }
+    .contato h1{
+        font-size: clamp(60px,4vw,80px);
+        padding-top: 2rem;
+    }
     .contato .conteudo .img-fluid{
         padding-right: 5vw;
     }
     .contato .conteudo a {
         font-size: 20px;
+        padding-bottom: 2rem;
+    }
+    .contato .conteudo li{
+        font-size: clamp(0px,2.5vw,26px);
+        text-align: left;
+        margin-left: -6vw;
+        border-left: 2px solid var(--textoEscuro);
+        padding-left: 2rem;
+        max-width: 35rem;
     }
 }
 
@@ -506,24 +621,6 @@ a{
 }
 
 
-@media screen and (max-width:768px) {
-    .contato .conteudo .img-fluid{
-        max-width: 50vw;
-        padding-bottom: 30vw;
-    }
-    .contato .conteudo ul{
-        margin-top: -20vw;
-        padding-left: 15vw;
-        padding-right: 10vw;
-    }
-    .contato h1{
-        margin-top: -110px;
-    }
-    .contato .conteudo li{
-        font-size: clamp(22px,2.5vw,36px);
-        padding-left: 1rem;
-    }
-}
 
 
 /* Contato end*/
@@ -542,7 +639,7 @@ footer h2{
     font-size: clamp(12px,1.5vw,16px);
 }
 footer h3{
-    font-size: clamp(10px,1.2vw,14px);
+    font-size: clamp(8px,1.2vw,14px);
 }
 
 
