@@ -445,6 +445,8 @@ a{
 .portfolio .card{
     margin-bottom: 60px;
     padding: 0;
+    background-color: rgba(201, 193, 187,0.2);
+    color: var(--textoClaro);
 }
 
 .portfolio .card .card-body{
@@ -461,6 +463,7 @@ a{
 
 .portfolio .card .btn{
     background-color: var(--bgEscuro);
+    border: 1px solid rgba(201, 193, 187,0.5);
     align-self: flex-start;
     position: absolute;
     
@@ -469,8 +472,9 @@ a{
 }
 
 .portfolio .card .btn:hover {
-    filter: opacity(0.40);
+    background-color: rgba(39, 36, 44,0.1);
     transition: 0.5s;
+    border: 1px solid rgba(201, 193, 187,0.8);
 }
 
 .portfolio .card .btn:active {
