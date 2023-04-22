@@ -83,7 +83,7 @@ a{
     padding-left: 7px;
     
     position: relative;
-    --c:linear-gradient(rgba(255,255,255,0.5) 0 0);
+    --c:linear-gradient(rgb(130, 131, 136) 0 0);
     background: var(--c), var(--c);
     background-size: .3em .1em;
     background-position:50% 100%;
