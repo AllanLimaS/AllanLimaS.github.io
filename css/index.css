@@ -231,12 +231,10 @@ a{
   }
 
 .home .transicao{
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position:absolute;
     width: 100%;
     height: 30vh;
-    padding-bottom: env(safe-area-inset-bottom);
+    align-self: end;
 }
 
 @media screen and (min-width: 992px) {
