@@ -20,7 +20,15 @@ $(window).on("load",function(){
 })
 // pre loader end 
 
+document.querySelector('.brand').addEventListener('click', function() {
+  // Adiciona a classe que contém as propriedades de animação
+  this.classList.add('click-animation');
 
+  // Remove a classe após a animação terminar
+  setTimeout(() => {
+    this.classList.remove('click-animation');
+  }, 1000); // Defina a duração da animação em milissegundos aqui
+});
 
 
 function exibirTamanhoJanela() {
