@@ -35,11 +35,47 @@ a{
     letter-spacing: 0.1em;
 }
 
+
+
+
+
+/* pre loader*/
+.loader-container{
+    width: 100%;
+    height: 100vh;
+    background-color:var(--bgEscuro);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.loader{
+    width: 50px;
+    height: 50px;
+    border: 5px solid;
+    color: var(--textoClaro);
+    border-radius: 50%;
+    border-top-color:transparent;
+    animation:Loader 1.2s linear infinite;
+}
+@keyframes Loader {
+    to{
+        transform: rotate(360deg);
+    }
+}
+/* pre loader end*/
+
 /* navbar*/
 .navbar{
     background-color: rgba(0,0,0,0.5);
     backdrop-filter: blur(0.5rem);
     text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.51);
+}
+.navbar-toggler{
+    border: none !important;
+    appearance: none !important;
+    box-shadow: none !important;
 }
 
 .brand{
@@ -47,8 +83,20 @@ a{
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
-    padding-left: 1rem;
+    margin-left: 1rem;
+    padding-left: 7px;
     
+    position: relative;
+    --c:linear-gradient(rgba(255,255,255,0.5) 0 0);
+    background: var(--c), var(--c);
+    background-size: .3em .1em;
+    background-position:50% 100%;
+    background-repeat: no-repeat;
+    transition: .3s linear, background-size .3s .2s linear;
+}
+.brand:hover {
+    background-size: 50% .1em;
+    background-position: 10% 100%, 90% 100%;
 }
 
 .bi-list{
@@ -58,28 +106,53 @@ a{
 
 .navBarItens{
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
     
 }
 
 .navBarItens a{
-    padding-right: 2rem;
-    padding-left: 2rem;
+    position: relative;
+    margin: 1.5rem 0rem 1rem 0.5rem;
+    padding: 0 5px 0 5px;
 
     text-decoration: none;
     color:var(--textoClaro);
 }
 
-@media screen and (max-width: 768px) {
+.navBarItens a:hover {
+    color: black;
+    font-weight: bold;
+    text-shadow: none;
+
+}
+
+.navBarItens a::before {
+    background: var(--bgClaro);
+    opacity: 01;
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.2s ease-in-out;
+    z-index: -1;
+  }
+  
+.navBarItens  a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+@media screen and (min-width: 768px) {
     .navBarItens{
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: flex-end;
     }
     .navBarItens a{
-        padding-top: 2rem;
-        padding-bottom: 1rem;
-        padding-left: 1rem;
+        padding: 0 5px 0 5px;
+        margin: 0 2rem;
     }
 }
 
@@ -87,7 +160,7 @@ a{
 
 /* navbar end */
 
-/* home hero*/
+/* home */
 .home{
     background-image: url(/images/homebg.png);
     background-repeat: no-repeat;
@@ -116,14 +189,6 @@ a{
     padding-right: 1rem;
 }
 
-
-@media screen and (min-width: 992px) {
-    .home .content{
-        padding-left: 10vh;
-        margin-left: auto;
-    }
- }
-
 .Typewriter{
     border-right: 3px solid;
     display: inline-block;
@@ -132,12 +197,19 @@ a{
     white-space: nowrap;
     overflow: hidden;
 
+    opacity: 0;
+  }
+  .animate {
+    opacity: 1;
     animation: typing 3.5s steps(100), blink .5s step-end infinite alternate;
   }
+
   
   @keyframes typing {
     from {
-      width: 0
+        width: 0;
+    }
+    to{
     }
   }
       
@@ -149,12 +221,20 @@ a{
 
 .home .transicao{
     position: absolute;
-    bottom: 0;
+    bottom: 0vh;
     left: 0;
     width: 100%;
     height: 30vh;
 }
-/* home hero end*/
+
+@media screen and (min-width: 992px) {
+    .home .content{
+        padding-left: 10vh;
+        margin-left: auto;
+    }
+ }
+
+/* home end*/
 
 /* sobre mim */
 .sobreMim{
@@ -167,15 +247,15 @@ a{
 
 .sobreMim .row{
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
 }
 
 .sobreMim h1{
     font-size: clamp(60px,4vw,80px);
     float: right;
     position: relative;
-    margin-top: 8vw;
-    margin-bottom: -6vh;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
     padding-bottom: 0.5rem;
 }
 
@@ -184,21 +264,21 @@ a{
 }
 
 .sobreMim .foto .img-fluid{
-    max-width: none;
     justify-content: end;
-    margin-right: -5rem;
+    max-width: 60%;
+    margin-right: -1rem;
 }
 
 .sobreMim .texto{
     padding-right: 1vw;
 }
 .sobreMim .texto h3{
-    font-size: clamp(20px,1.5vw,24px);
-    margin-left: -6vw;
-    border-left: 2px solid var(--textoClaro);
-    padding-left: 1rem;
-    max-width: inherit;
     line-height: clamp(21px,3vw,2rem);
+    max-width: inherit;
+    font-size: 18px;
+    text-align: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
 
 }
 
@@ -210,37 +290,13 @@ a{
     height: 15vh;
 }
 
-@media screen and (max-width: 768px) {
-    .sobreMim .row{
-        flex-direction: column-reverse;
-    }
-
-    .sobreMim h1{
-        margin-top: 4rem;
-        margin-bottom: 1rem;
-    }
-    .sobreMim .texto h3{
-        font-size: 18px;
-        margin: 0;
-        border-left: none;
-        text-align: center;
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-    .sobreMim .foto .img-fluid{
-        max-width: 60%;
-        margin-right: -1rem;
-        margin-bottom: 0;
-        padding-top: 0rem;
-    }
-    .sobreMim .transicao{
-        height: 25vw;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .sobreMim{
         height: 100vh;
+    }
+
+    .sobreMim .row{
+        flex-direction: row;
     }
     .sobreMim h1{
         margin-top: 10vw;
@@ -249,6 +305,11 @@ a{
     
     }
     .sobreMim .texto h3{
+        font-size: clamp(20px,1.5vw,24px);
+        margin-left: -6vw;
+        border-left: 2px solid var(--textoClaro);
+        padding-left: 1rem;
+        text-align: start;
         line-height: 1.5rem;
     }
 
@@ -325,28 +386,37 @@ a{
 }
 
 .skills h1 {
-    font-size: clamp(60px,4vw,80px);
-    margin-bottom: 3rem;
+    font-size: 38px;
+    margin-bottom: 1rem;
+    padding-top: 0rem;
 }
 
 .skills .conteudo {
+    width: 100%;
     width: 80%;
     max-width: 1200px;
 }
 
+.skills .row{
+    flex-direction: column;
+    align-content: center;
+    margin: auto;
+}
+
 .skills h3 {
-    font-size: clamp(22px,2.5vw,26px);
+    font-size: 18px;
 }
 
 .skills .bloco_1 {
-    text-align: end;
-    padding-right: 2rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
 }
 
 .skills .bloco_2 {
-    text-align: left;
-    border-left: 2px solid var(--textoEscuro);
-    padding-left: 2rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
 }
 
 .skills .transicao{
@@ -354,50 +424,41 @@ a{
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 125px;
-}
-
-@media screen and (max-width: 768px) {
-    .skills .conteudo{
-        width: 100%;
-    }
-    .skills .row{
-        flex-direction: column;
-        margin: 0;
-        align-content: center;
-    }
-
-    .skills h3 {
-        font-size: 18px;
-    }
-    .skills h1{
-        font-size: 38px;
-        margin-bottom: 1rem;
-        padding-top: 0rem;
-    }
-
-    .skills .bloco_1{
-        width: 100% !important;
-        text-align: center !important;
-        padding: 1rem;
-    }
-    .skills .bloco_2{
-        width: 100% !important;
-        text-align: center !important;
-        border: none;
-        padding: 1rem;
-    }
-    .skills .transicao{
     height: 25vw;
-    }
 }
 
 @media screen and (min-width: 768px) {
     .skills{
         height: 100vh;
     }
+    .skills .conteudo {
+        width: 80%;
+        max-width: 1200px;
+    }
+    .skills .row{
+        flex-direction: row;
+    }
     .skills h3 {
         font-size: clamp(18px,2.5vw,26px);
+    }
+    .skills h1{
+        font-size: clamp(60px,4vw,80px);
+        margin-bottom:3rem;
+    }
+    .skills .bloco_1 {
+        text-align: end;
+        padding-right: 2rem;
+        width:50%
+    }
+    
+    .skills .bloco_2 {
+        text-align: left;
+        border-left: 2px solid var(--textoEscuro);
+        padding-left: 2rem;
+        width:50%
+    }
+    .skills .transicao{
+        height: 125px;
     }
 }
 
@@ -406,41 +467,25 @@ a{
         font-size: 80px
     }
 }
-
-
 /* Skills end*/
 
 /* portifolio*/
-
-
 
 .portfolio {
     position: relative;
     background-color: var(--bgEscuro);
     color: var(--textoClaro);
-    height:200rem;
+    height:205rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-@media screen and (min-width:768px) {
-    .portfolio {
-        height:210vh !important;
-    }
-}
-@media screen and (min-width:992px) {
-    .portfolio {
-        height:160vh !important;
-    }
-}
-
 .portfolio h1{
-    font-size: clamp(60px,4vw,80px);
-    padding-top: 140px;
     padding-bottom: 70px;
+    font-size: 38px;
+    padding-top: 5rem;
 }
-
 
 .portfolio .card{
     margin-bottom: 60px;
@@ -466,7 +511,6 @@ a{
     border: 1px solid rgba(201, 193, 187,0.5);
     align-self: flex-start;
     position: absolute;
-    
     bottom: 1rem;
     left: 1rem;
 }
@@ -486,19 +530,25 @@ a{
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: 15vw;
 }
 
-@media screen and (max-width: 768px) {
-    .portfolio h1{
-    font-size: 38px;
-    padding-top: 5rem;
 
+@media screen and (min-width:768px) {
+    .portfolio {
+        height:210vh !important;
+    }
+    .portfolio h1{
+        font-size: clamp(60px,4vw,80px);
+        padding-top: 140px;
+    }
+    .portfolio .transicao{
+        height: 12rem;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width:992px) {
     .portfolio {
-        height:360vh;
+        height:160vh !important;
     }
 }
 
@@ -509,7 +559,7 @@ a{
     position: relative;
     background-color: var(--bgClaro);
     color: var(--textoEscuro);
-    height: 44rem;
+    height: 50rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -528,19 +578,28 @@ a{
 
 .contato .row {
     align-items: center;
+    flex-direction: column;
 }
 
 .contato .col {
     text-align: center;
     justify-content: end;
+
+    flex-direction: column;
+    align-items: center;
 }
 
 .contato .conteudo .img-fluid{
-    max-width: 30vw;
+    max-width: 50vw;
+    padding-bottom: 1rem;
 }
+
 
 .contato .conteudo ul{
     list-style-type: none;
+    width: fit-content;
+    margin: auto;
+    padding: 0;
 }
 .contato .conteudo li{
     font-size: 14px;
@@ -561,71 +620,64 @@ a{
     max-width: 80%;
 }
 
-@media screen and (max-width: 768px) {
-    .d-flex{
-        flex-direction: column;
-        align-items: center;
-    }
-    .row{
-        flex-direction: column;
-    }
-    .contato .conteudo .img-fluid{
-        max-width: 50vw;
-        padding-bottom: 1rem;
-    }
-}
-
-
 @media screen and (min-width: 768px) {
     .contato{
         height: 100vh;
-        margin-top: -8rem;
         justify-content: center;
     }
     .contato h1{
         font-size: clamp(60px,4vw,80px);
         padding-top: 2rem;
     }
+    .contato .col{
+        align-items: end;
+    }
+    .row{
+        flex-direction: row !important;
+    }
     .contato .conteudo .img-fluid{
-        padding-right: 5vw;
+        padding-right: 0;
+        max-width: 30vw;
+        padding-bottom:0;
     }
     .contato .conteudo a {
         font-size: 20px;
         padding-bottom: 2rem;
     }
+
+    .contato .conteudo ul{
+        margin: 0;
+    }
+
     .contato .conteudo li{
         font-size: clamp(0px,2.5vw,26px);
         text-align: left;
-        margin-left: -6vw;
         border-left: 2px solid var(--textoEscuro);
         padding-left: 2rem;
         max-width: 35rem;
     }
+    .texto .col{
+        display: grid !important;
+        justify-content: start !important;
+    }
 }
 
 @media screen and (min-width: 992px) {
-    .contato .conteudo .img-fluid{
-        padding-right: 5vw;
-    }
     .contato .conteudo a {
         font-size: 20px;
     }
+
 }
 
 @media screen and (min-width: 1200px) {
-    .contato .conteudo .img-fluid{
-        padding-right: 5vw;
-    }
     .contato .conteudo a {
         font-size: 26px;
     }
     .contato .conteudo li{
         line-height: 3.5rem;
     }
+
 }
-
-
-
 
 /* Contato end*/
 
@@ -646,6 +698,17 @@ footer h3{
     font-size: clamp(8px,1.2vw,14px);
 }
 
-
 /* footer end*/
 
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform:  translateX(-100%);
+    transition: all 1s;
+}
+
+.show { 
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}

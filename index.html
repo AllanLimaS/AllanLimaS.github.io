@@ -14,9 +14,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;700&display=swap" rel="stylesheet">
-
+    <!-- Script do jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
 </head>
 <body>
+
+    <!-- Pre loader-->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <!-- Pre loader end-->
+
 
     <!--navbar-->
     <nav class="navbar fixed-top navbar-expand-md">
@@ -42,7 +51,7 @@
     <!-- home -->
     <section id="Home" class="home container-fluid d-flex justify-content-center align-items-center">
         <div class="content container">
-            <h1>Allan de lima<br> da silva</h1>
+            <h1>Allan de Lima<br> da Silva</h1>
             <div class="Typewriter"><h2>Desenvolvedor de software</h2></div>
         </div>    
         <img src="images/transicao1_2.png" class="img-fluid transicao" alt="">
@@ -51,19 +60,19 @@
 
     <!-- Sobre mim: -->
     <section id="SobreMim" class="sobreMim">
-        <div class="container d-flex justify-content-center">
-            <h1>Sobre mim</h1>
+        <div class="container d-flex justify-content-center hidden">
+            <h1 class="hidden">Sobre mim</h1>
         </div>
-        <div class="container-fluid conteudo">
+        <div class="container-fluid conteudo hidden">
             <div class="row justify-content-between align-items-center ">
                 <div class="foto col d-flex justify-content-center">
                     <img class="img-fluid" src="images/sobremim_foto.png" alt="">
                 </div>
                 <div class="texto col">
                     <h3>
-                        Estudo na área de TI desde 2018 e sempre fui apaixonado por tecnologia. Procuro uma oportunidade para iniciar minha carreira na área de TI, que sempre almejei desde o início dos meus estudos.
+                        Estudo na área de TI desde 2018 e sempre fui apaixonado por tecnologia. Procuro uma oportunidade para iniciar minha carreira, que sempre almejei desde o início dos meus estudos.
                         <br><br>
-                        Tenho experiência profissional no Mercado Shalon como Repositor, Comprador e Auxiliar Administrativo entre 2016 e 2023. Também fui Voluntário no Museu oceanográfico Univali em 2014 e 2015, onde atuei como Mediador no Atendimento ao Público.
+                        Tenho experiência profissional no Mercado Shalon como Repositor, Comprador e Auxiliar Administrativo entre 2016 e 2023. Fui Voluntário no Museu oceanográfico Univali em 2014 e 2015, onde atuei como Mediador no Atendimento ao Público.
                         <br><br>
                         Gosto de me manter atualizado com as tendências do mercado de tecnologia e estou sempre em busca de novos desafios e oportunidades de aprendizado.
                     </h3>
@@ -77,13 +86,11 @@
     <!-- Skills  -->
     <section id="Skills" class="skills">
         <div class="container conteudo d-flex flex-column align-items-center">
-          <h1>Skills</h1>
-          <div class="row justify-content-center align-items-center d-flex">
+          <h1 class="hidden">Skills</h1>
+          <div class="row justify-content-center align-items-center d-flex hidden">
             <div class="col-6 bloco_1">
-              <h3><span>Conhecimento intermediário em:</span> 
-              C, C++, C#, Python, Java, JavaScript, HTML, CSS. <br><br>
-      
-              <span> Conhecimento em:</span>
+              <h3><span>Conhecimento  em:<br></span> 
+              C, C++, C#, Python, Java, JavaScript, HTML, CSS, 
               Desenvolvimento Web, Bootstrap, React , uso de múltiplas threads e controle de versão com git.
               </h3>
             </div>
@@ -103,12 +110,12 @@
     <!-- Portfolio -->
     <section id="Portfolio" class="portfolio">
         <div class="container d-flex flex-column align-items-center">
-            <h1>Portfólio</h1>
+            <h1 class="hidden">Portfólio</h1>
         </div>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center align-content-center d-flex">
                 <div class="col">
-                    <div class="card">
+                    <div class="card hidden">
                         <img src="images/port_1.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Chat em rede (Python)</h5>
@@ -118,7 +125,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card">
+                    <div class="card hidden" >
                         <img src="images/port_2.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">ArvoreHuffman (C++)</h5>
@@ -128,7 +135,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card">
+                    <div class="card hidden">
                         <img src="images/port_3.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Uni-Ride (concepção e prototipação)</h5>
@@ -138,7 +145,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card">
+                    <div class="card hidden">
                         <img src="images/port_4.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Portfólio (Bootstrap)</h5>
@@ -148,7 +155,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card">
+                    <div class="card hidden">
                         <img src="images/port_5.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Perfil Github</h5>
@@ -166,10 +173,10 @@
     <!-- Contato -->
     <section id="Contato" class="contato">
         <div class="container d-flex flex-column align-items-center">
-            <h1>Contato</h1>
+            <h1 class="hidden">Contato</h1>
         </div>
 
-        <div class="container-fluid conteudo">
+        <div class="container-fluid conteudo hidden">
             <div class="row justify-content-between align-items-center ">
                 <div class="foto col d-flex">
                     <img class="img-fluid" src="images/contato_foto.png" alt="">
