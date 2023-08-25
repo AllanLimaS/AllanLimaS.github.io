@@ -482,7 +482,7 @@ a{
     position: relative;
     background-color: var(--bgEscuro);
     color: var(--textoClaro);
-    height:205rem;
+    height:210rem;
     display: flex;
     flex-direction: column;
     align-items: center;
